@@ -1,0 +1,63 @@
+[font=Verdana][size=4][b]Description[/b][/size][/font]
+The mod enables Outlines for other Players, to be able to find them better.
+Currently, I know only of 3 possible outline colors that can be used. [color=#f4f4f4][b]White[/b][/color] (very light outline), [color=#00ffff][b]Blue[/b][/color] (Cyan, used for objects highlighting) and [color=#ff0000][b]Red[/b][/color] (used for NPC highlighting, when wearing certain armor set).
+Currently, the mod only applies the color (default [b]White[/b]), which can be set in [b]main.lua[/b] via a variable, to other players. I might add Outlines to NPCs, Enemies or special objects if there is enough interest for it.
+
+[font=Verdana][size=4][b]Requirements[/b][/size][/font]
+[size=3][url=https://www.nexusmods.com/abioticfactor/mods/35]UE4SS for Abiotic Factor[/url][/size]
+
+[font=Verdana][size=4][b]Manual Installation[/b][/size][/font]
+[size=1]As for now Vortex doesn't support the game, so you have to install the mod manually.[/size]
+1. Follow the instruction on the [url=https://www.nexusmods.com/abioticfactor/mods/35]UE4SS for Abiotic Factor[/url] page to download and install latest UE4SS from there.
+2. After use the [b]Manual Download[/b] button in [i]Files[/i] tab of this mod to download the mod as a zip file.
+4. Unzip/extract the content of mod's zip ([b]AlwaysOutline[/b] folder) into the directory: [i](game root directory)\AbioticFactor\Binaries\Win64\ue4ss\Mods\[/i]
+[size=2]Make sure you don't create a new folder while extracting! If you do just move the content to the destination after.[/size]
+[size=2]Whole mod path should be like this: [i](game root directory)\AbioticFactor\Binaries\Win64\ue4ss\Mods\AlwaysOutline\[/i][/size]
+[size=2]Steam example: [i]C:\Program Files (x86)\Steam\steamapps\common\AbioticFactor\Binaries\Win64\ue4ss\Mods\AlwaysOutline\[/i][/size]
+5. Verify that you have installed the mod correctly.
+The mod directory should contain a [b]Scripts[/b] folder and an [b]enabled.txt[/b] file.
+[size=2][i](game root directory)\AbioticFactor\Binaries\Win64\ue4ss\Mods\AlwaysOutline\Scripts\[/i]
+[i](game root directory)\AbioticFactor\Binaries\Win64\ue4ss\Mods\AlwaysOutline\enabled.txt[/i][/size]
+
+[font=Verdana][size=4][b]Mod Configuration[/b][/size][/font]
+[size=2]All the configurations are happening in the [b]main.lua[/b][/size]
+1. Navigate into mod's directory->Scripts to find the [b]main.lua[/b] file.
+[size=2]It should be under: (game root directory)\AbioticFactor\Binaries\Win64\ue4ss\Mods\AlwaysOutline\Scripts\[/size]
+2. Open the [b]main.lua[/b] with Notepad or any other text editor.
+3. Under the [b]Configurations[/b] section in the [i]main.lua[/i] you will find variables that you can change.
+Currently, you can only change the [b]PlayerOutlineColor[/b] variable to modify in which color other players should be outlined.
+Assign one of the predefined color variables to it. (Blue, White or Red)
+Example:
+[code]---------- Configurations ----------
+PlayerOutlineColor = Blue
+------------------------------------
+[/code]
+4. Don't forget to save the file!
+
+[font=Verdana][size=4][b]Bug/Issue Reports[/b][/size][/font]
+If you have followed the installation instructions above and are 100% sure that you have done everything correctly, but you are still having problems with the mod, please provide the following information if you wish to report an issue. 
+[list=1]
+[*]Your game version and Platform (Steam/GoG etc.)
+[*]Which mod version are you using
+[*]The content of [b]UE4SS.log[/b] file. UE4SS.log file should be in the installation directory of UE4SS.
+[/list]
+
+[font=Verdana][size=4][b]My AF Mods[/b][/size][/font]
+Check out my other Abiotic Factor mods.
+[list]
+[*][url=https://www.nexusmods.com/abioticfactor/mods/28]Cheat Console Commands[/url]
+[*][url=https://www.nexusmods.com/abioticfactor/mods/23]Instant Fishing[/url]
+[*][url=https://www.nexusmods.com/abioticfactor/mods/33]Stack Manager[/url]
+[*][url=https://www.nexusmods.com/abioticfactor/mods/20]Duplicate Items[/url]
+[*][url=https://www.nexusmods.com/abioticfactor/mods/22]Unlimited Power (Gear - Held Item - Batteries)[/url]
+[*][url=https://www.nexusmods.com/abioticfactor/mods/31]Jager Corpse Remover[/url]
+[*][url=https://www.nexusmods.com/abioticfactor/mods/41]Infinite Leyak Containment[/url]
+[*][url=https://www.nexusmods.com/abioticfactor/mods/42]Customization Unlocker[/url]
+[/list]
+
+[b][url=https://github.com/igromanru/AlwaysOutline-UE4SS-AF]GitHub Page[/url][/b]
+
+[font=Arial][size=4]Highest form of appreciation[/size][/font]
+[size=2]If you like my work and feel generous, you can support me.[/size]
+[url=https://ko-fi.com/igromanru][img]https://i.imgur.com/rGcPxK8.png[/img][/url]
+[url=https://buymeacoffee.com/igromanru][img]https://i.imgur.com/JG0mNZg.png[/img][/url]
