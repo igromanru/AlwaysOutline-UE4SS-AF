@@ -6,13 +6,13 @@
 
 -- Possible outline colors --
 local None = 0
-local Cyan = 1 -- Blue
+local Blue = 1 -- Cyan
 local White = 2
 local Red = 8
 -----------------------------
 
 ---------- Configurations ----------
-local PlayerOutlineColor = White
+PlayerOutlineColor = White
 ------------------------------------
 
 ------------------------------
