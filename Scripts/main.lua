@@ -4,8 +4,15 @@
     Mod Name: Always Outline
 ]]
 
----------- Configurations ----------
+-- Possible outline colors --
+local None = 0
+local Cyan = 1 -- Blue
+local White = 2
+local Red = 8
+-----------------------------
 
+---------- Configurations ----------
+local PlayerOutlineColor = White
 ------------------------------------
 
 ------------------------------
@@ -19,12 +26,38 @@ DebugMode = true
 
 LogInfo("Starting mod initialization")
 
--- Hooks --
-ExecuteInGameThread(function()
-    LogInfo("Initializing hooks")
-    -- LoadAsset("/Game/Blueprints/Widgets/Inventory/W_InventoryItemSlot.W_InventoryItemSlot_C")
-    -- RegisterHook("/Game/Blueprints/Widgets/Inventory/W_InventoryItemSlot.W_InventoryItemSlot_C:OnMouseEnter", OnMouseEnter)
-    LogInfo("Hooks initialized")
+---@param OutlineComponent UOutlineComponent_C
+---@param Mask integer|OutlineMask
+local function SetOutlineMask(OutlineComponent, Mask)
+    if IsValid(OutlineComponent) and OutlineComponent.OutlineMask ~= Mask then
+        OutlineComponent.OutlineMask = Mask
+        OutlineComponent.ComponentEnabled = true
+        OutlineComponent:UpdateHighlightedComponents()
+    end
+end
+
+local function HighlightPlayers()
+    local gameState = AFUtils.GetSurvivalGameState()
+    if IsValid(gameState) and gameState.PlayerCharacterInGame and #gameState.PlayerCharacterInGame > 1 then
+        local myPlayer = AFUtils.GetMyPlayer()
+        if IsValid(myPlayer) then
+            local myPlayerAddress = myPlayer:GetAddress()
+            for i = 1, #gameState.PlayerCharacterInGame do
+                local player = gameState.PlayerCharacterInGame[i]
+                if IsValid(player) and player:GetAddress() ~= myPlayerAddress then
+                    SetOutlineMask(player.OutlineComponent, PlayerOutlineColor)
+                end
+            end
+        end
+    end
+end
+
+-- Main loop
+LoopAsync(500, function()
+    ExecuteInGameThread(function ()
+        HighlightPlayers()
+    end)
+    return false
 end)
 
 LogInfo("Mod loaded successfully")
